@@ -1,0 +1,1003 @@
+# 30-Day Python Coding Challenge: From Basic to Advanced
+
+## Day 1: Hello, World!
+**Question:** Write a Python program that prints "Hello, World!" to the console.
+
+**Description:** This is the traditional first program for any language. It's a simple way to ensure your Python environment is set up correctly.
+
+**Solution:**
+```python
+print("Hello, World!")
+```
+
+**Notes:**
+- `print()` is a built-in function in Python used to output text to the console.
+- In Python 3, parentheses are required for the `print()` function.
+
+## Day 2: Variables and Data Types
+**Question:** Create variables of different data types (integer, float, string, boolean) and print them.
+
+**Description:** Understanding various data types is crucial in programming. This exercise helps you practice declaring variables and using different data types.
+
+**Solution:**
+```python
+age = 25
+height = 1.75
+name = "Alice"
+is_student = True
+
+print(f"Age: {age}, type: {type(age)}")
+print(f"Height: {height}, type: {type(height)}")
+print(f"Name: {name}, type: {type(name)}")
+print(f"Is Student: {is_student}, type: {type(is_student)}")
+```
+
+**Notes:**
+- Python is dynamically typed, meaning you don't need to declare the type of a variable.
+- The `type()` function returns the type of an object.
+- F-strings (formatted string literals) provide an easy way to embed expressions inside string literals.
+
+## Day 3: Basic Arithmetic Operations
+**Question:** Write a program that performs basic arithmetic operations (addition, subtraction, multiplication, division) on two numbers.
+
+**Description:** This exercise helps you understand how to perform mathematical operations in Python and how to use variables in calculations.
+
+**Solution:**
+```python
+a = 10
+b = 3
+
+print(f"Addition: {a + b}")
+print(f"Subtraction: {a - b}")
+print(f"Multiplication: {a * b}")
+print(f"Division: {a / b}")
+print(f"Integer Division: {a // b}")
+print(f"Modulus: {a % b}")
+print(f"Exponentiation: {a ** b}")
+```
+
+**Notes:**
+- `//` is used for integer division (floor division).
+- `%` is the modulus operator, which returns the remainder of a division.
+- `**` is used for exponentiation.
+
+## Day 4: Conditional Statements
+**Question:** Write a program that checks if a number is positive, negative, or zero.
+
+**Description:** This exercise introduces you to conditional statements (if, elif, else) in Python, which are used for decision-making in programs.
+
+**Solution:**
+```python
+number = float(input("Enter a number: "))
+
+if number > 0:
+    print("The number is positive.")
+elif number < 0:
+    print("The number is negative.")
+else:
+    print("The number is zero.")
+```
+
+**Notes:**
+- `input()` function is used to get user input.
+- `float()` converts the input string to a floating-point number.
+- The `if-elif-else` structure allows for multiple conditions to be checked sequentially.
+
+## Day 5: Loops - For Loop
+**Question:** Write a program that prints the first 10 numbers of the Fibonacci sequence.
+
+**Description:** This exercise introduces you to the concept of loops, specifically the for loop, and how to use it to generate a sequence of numbers.
+
+**Solution:**
+```python
+def fibonacci(n):
+    fib = [0, 1]
+    for i in range(2, n):
+        fib.append(fib[i-1] + fib[i-2])
+    return fib
+
+print(fibonacci(10))
+```
+
+**Notes:**
+- The Fibonacci sequence is a series where each number is the sum of the two preceding ones.
+- Lists in Python can be easily appended to using the `append()` method.
+- The `range()` function generates a sequence of numbers.
+
+## Day 6: Loops - While Loop
+**Question:** Write a program that calculates the factorial of a number using a while loop.
+
+**Description:** This exercise helps you understand the while loop and how it can be used for repetitive tasks until a condition is met.
+
+**Solution:**
+```python
+def factorial(n):
+    result = 1
+    while n > 0:
+        result *= n
+        n -= 1
+    return result
+
+number = int(input("Enter a number: "))
+print(f"The factorial of {number} is {factorial(number)}")
+```
+
+**Notes:**
+- Factorial of a number n is the product of all positive integers less than or equal to n.
+- The while loop continues as long as the condition (n > 0) is True.
+- `*=` is a shorthand for multiplication and assignment.
+
+## Day 7: Lists and List Comprehensions
+**Question:** Create a list of squares of even numbers from 0 to 20 using a list comprehension.
+
+**Description:** This exercise introduces you to lists and list comprehensions, which are powerful tools for creating and manipulating lists in Python.
+
+**Solution:**
+```python
+squares = [x**2 for x in range(21) if x % 2 == 0]
+print(squares)
+```
+
+**Notes:**
+- List comprehensions provide a concise way to create lists based on existing lists.
+- The syntax is: `[expression for item in iterable if condition]`
+- This is often more readable and faster than using a for loop with append().
+
+## Day 8: Dictionaries
+**Question:** Create a program that counts the frequency of words in a given string using a dictionary.
+
+**Description:** This exercise helps you understand dictionaries, which are key-value pairs in Python, and how they can be used to count occurrences.
+
+**Solution:**
+```python
+def word_frequency(sentence):
+    words = sentence.lower().split()
+    frequency = {}
+    for word in words:
+        frequency[word] = frequency.get(word, 0) + 1
+    return frequency
+
+sentence = "The quick brown fox jumps over the lazy dog"
+print(word_frequency(sentence))
+```
+
+**Notes:**
+- Dictionaries in Python are defined using curly braces `{}`.
+- The `get()` method returns the value for a key, or a default if the key is not in the dictionary.
+- `lower()` converts all characters to lowercase, and `split()` divides a string into a list of substrings.
+
+## Day 9: Functions and Default Arguments
+**Question:** Write a function that calculates the area of a rectangle. It should have default values for length and width.
+
+**Description:** This exercise introduces you to defining functions with default arguments, allowing for more flexible function calls.
+
+**Solution:**
+```python
+def rectangle_area(length=1, width=1):
+    return length * width
+
+print(rectangle_area())        # Uses default values
+print(rectangle_area(5))       # Uses default width
+print(rectangle_area(4, 3))    # Uses provided values
+print(rectangle_area(width=6)) # Uses keyword argument
+```
+
+**Notes:**
+- Default arguments are defined in the function signature using the `=` sign.
+- When calling a function, you can use positional arguments or keyword arguments.
+- Default arguments must come after non-default arguments in the function definition.
+
+## Day 10: Error Handling
+**Question:** Write a program that asks the user for two numbers and performs division. Use try-except to handle potential errors.
+
+**Description:** This exercise introduces you to error handling in Python using try-except blocks, which allow you to gracefully handle potential runtime errors.
+
+**Solution:**
+```python
+try:
+    num1 = float(input("Enter the first number: "))
+    num2 = float(input("Enter the second number: "))
+    result = num1 / num2
+    print(f"The result of {num1} divided by {num2} is {result}")
+except ValueError:
+    print("Error: Please enter valid numbers.")
+except ZeroDivisionError:
+    print("Error: Cannot divide by zero.")
+except Exception as e:
+    print(f"An unexpected error occurred: {e}")
+```
+
+**Notes:**
+- The `try` block contains code that might raise an exception.
+- Multiple `except` blocks can be used to handle different types of exceptions.
+- It's good practice to handle specific exceptions before general ones.
+
+## Day 11: File Handling
+**Question:** Write a program that reads a text file, counts the occurrences of each word, and writes the results to a new file.
+
+**Description:** This exercise introduces file handling in Python, including reading from and writing to files.
+
+**Solution:**
+```python
+from collections import Counter
+
+def count_words(input_file, output_file):
+    with open(input_file, 'r') as file:
+        text = file.read().lower()
+        words = text.split()
+        word_counts = Counter(words)
+
+    with open(output_file, 'w') as file:
+        for word, count in word_counts.most_common():
+            file.write(f"{word}: {count}
+")
+
+count_words('input.txt', 'word_counts.txt')
+print("Word counts have been written to word_counts.txt")
+```
+
+**Notes:**
+- The `with` statement ensures that the file is properly closed after we're done with it.
+- `Counter` from the `collections` module is a convenient way to count occurrences of items.
+- The `most_common()` method returns all elements in the counter sorted by count.
+
+## Day 12: Object-Oriented Programming - Classes and Objects
+**Question:** Create a class representing a car with attributes for make, model, and year. Include a method to display the car's information.
+
+**Description:** This exercise introduces you to object-oriented programming in Python, focusing on creating classes and objects.
+
+**Solution:**
+```python
+class Car:
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+
+    def display_info(self):
+        return f"{self.year} {self.make} {self.model}"
+
+# Creating car objects
+car1 = Car("Toyota", "Corolla", 2020)
+car2 = Car("Tesla", "Model 3", 2021)
+
+# Displaying car information
+print(car1.display_info())
+print(car2.display_info())
+```
+
+**Notes:**
+- The `__init__` method is a special method in Python classes, used for initializing new objects.
+- `self` refers to the instance of the class and is used to access variables that belong to the class.
+- Methods are functions defined inside the class that can perform actions on the object's data.
+
+## Day 13: Inheritance
+**Question:** Extend the Car class from Day 12 by creating an ElectricCar subclass with an additional attribute for battery capacity.
+
+**Description:** This exercise builds on object-oriented programming concepts, introducing inheritance as a way to create a new class based on an existing class.
+
+**Solution:**
+```python
+class Car:
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+
+    def display_info(self):
+        return f"{self.year} {self.make} {self.model}"
+
+class ElectricCar(Car):
+    def __init__(self, make, model, year, battery_capacity):
+        super().__init__(make, model, year)
+        self.battery_capacity = battery_capacity
+
+    def display_info(self):
+        return f"{super().display_info()}, Battery: {self.battery_capacity} kWh"
+
+# Creating car objects
+regular_car = Car("Toyota", "Corolla", 2020)
+electric_car = ElectricCar("Tesla", "Model 3", 2021, 75)
+
+# Displaying car information
+print(regular_car.display_info())
+print(electric_car.display_info())
+```
+
+**Notes:**
+- The `ElectricCar` class inherits from the `Car` class using `ElectricCar(Car)`.
+- `super().__init__()` calls the `__init__` method of the parent class.
+- Method overriding is demonstrated in the `display_info` method of `ElectricCar`.
+
+## Day 14: Modules and Packages
+**Question:** Create a simple calculator package with separate modules for different operations (addition, subtraction, multiplication, division).
+
+**Description:** This exercise introduces you to creating and using modules and packages in Python, which are essential for organizing and reusing code.
+
+**Solution:**
+Create a directory structure like this:
+```
+calculator/
+    __init__.py
+    addition.py
+    subtraction.py
+    multiplication.py
+    division.py
+main.py
+```
+
+In each module file (e.g., addition.py), define a function:
+```python
+# addition.py
+def add(a, b):
+    return a + b
+```
+
+In the `__init__.py` file:
+```python
+from .addition import add
+from .subtraction import subtract
+from .multiplication import multiply
+from .division import divide
+```
+
+In `main.py`:
+```python
+from calculator import add, subtract, multiply, divide
+
+print(add(5, 3))
+print(subtract(10, 4))
+print(multiply(2, 6))
+print(divide(15, 3))
+```
+
+**Notes:**
+- Packages are a way of organizing related modules.
+- The `__init__.py` file makes Python treat the directory as a package.
+- Importing specific functions from modules keeps the namespace clean.
+
+## Day 15: List Manipulation and Lambda Functions
+**Question:** Write a program that sorts a list of tuples based on the second element of each tuple using a lambda function.
+
+**Description:** This exercise introduces lambda functions (anonymous functions) and their use in sorting complex data structures.
+
+**Solution:**
+```python
+data = [('apple', 5), ('banana', 2), ('cherry', 8), ('date', 1)]
+
+sorted_data = sorted(data, key=lambda x: x[1])
+
+print("Original data:", data)
+print("Sorted data:", sorted_data)
+```
+
+**Notes:**
+- Lambda functions are small anonymous functions defined with the `lambda` keyword.
+- The `sorted()` function can take a `key` parameter that specifies a function to be called on each list element prior to making comparisons.
+- `x[1]` in the lambda function refers to the second element of each tuple.
+
+## Day 16: Decorators
+**Question:** Create a decorator that measures the execution time of a function.
+
+**Description:** This exercise introduces decorators, which are a way to modify or enhance functions without changing their code.
+
+**Solution:**
+```python
+import time
+
+def timer_decorator(func):
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        end_time = time.time()
+        print(f"{func.__name__} took {end_time - start_time:.5f} seconds to execute.")
+        return result
+    return wrapper
+
+@timer_decorator
+def slow_function():
+    time.sleep(2)
+    print("Function execution completed.")
+
+slow_function()
+```
+
+**Notes:**
+- Decorators are defined using the `@` symbol followed by the decorator function name.
+- The `wrapper` function inside the decorator allows you to execute code before and after the decorated function.
+- `*args` and `**kwargs` allow the decorator to work with any function, regardless of its parameters.
+
+## Day 17: Generators
+**Question:** Create a generator function that yields the Fibonacci sequence up to a specified number of terms.
+
+**Description:** This exercise introduces generator functions, which allow you to declare a function that behaves like an iterator.
+
+**Solution:**
+```python
+def fibonacci_generator(n):
+    a, b = 0, 1
+    count = 0
+    while count < n:
+        yield a
+        a, b = b, a + b
+        count += 1
+
+# Using the generator
+for num in fibonacci_generator(10):
+    print(num, end=' ')
+```
+
+**Notes:**
+- Generator functions use `yield` instead of `return`.
+- Generators are memory efficient as they generate values on-the-fly instead of storing them all at once.
+- The `yield` statement pauses the function and saves its state, allowing it to resume from where it left off.
+
+## Day 18: Regular Expressions
+**Question:** Write a program that extracts all email addresses from a given text using regular expressions.
+
+**Description:** This exercise introduces regular expressions, which are powerful tools for pattern matching and text processing.
+
+**Solution:**
+```python
+import re
+
+def extract_emails(text):
+    pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+    return re.findall(pattern, text)
+
+sample_text = """
+Contact us at info@example.com or support@company.co.uk.
+For personal inquiries, reach out to john.doe@email.com.
+"""
+
+emails = extract_emails(sample_text)
+print("Extracted email addresses:", emails)
+```
+
+**Notes:**
+- The `re` module in Python provides support for regular expressions.
+- `r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'` is a pattern that matches most email addresses.
+- `re.findall()` returns all non-overlapping matches of a pattern in a string.
+
+## Day 19: Context Managers
+**Question:** Create a context manager for handling file operations that automatically closes the file and logs the operation.
+
+**Description:** This exercise introduces context managers, which provide a convenient way to manage resources like file handles.
+
+**Solution:**
+```python
+import logging
+
+class FileHandler:
+    def __init__(self, filename, mode):
+        self.filename = filename
+        self.mode = mode
+        self.file = None
+
+    def __enter__(self):
+        self.file = open(self.filename, self.mode)
+        logging.info(f"Opened file {self.filename} in mode {self.mode}")
+        return self.file
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        if self.file:
+            self.file.close()
+            logging.info(f"Closed file {self.filename}")
+        if exc_type:
+            logging.error(f"An error occurred: {exc_value}")
+        return False
+
+# Using the context manager
+logging.basicConfig(level=logging.INFO)
+
+with FileHandler('example.txt', 'w') as f:
+    f.write("Hello, Context Manager!")
+
+print("File operation completed.")
+```
+
+**Notes:**
+- Context managers are implemented using the `__enter__` and `__exit__` methods.
+- The `with` statement is used to invoke context managers.
+- Context managers ensure proper acquisition and release of resources.
+
+## Day 20: Multithreading
+**Question:** Create a program that downloads multiple files concurrently using threads.
+
+**Description:** This exercise introduces multithreading, which allows you to perform multiple operations concurrently.
+
+**Solution:**
+```python
+import threading
+import requests
+import time
+
+def download_file(url):
+    response = requests.get(url)
+    filename = url.split('/')[-1]
+    with open(filename, 'wb') as f:
+        f.write(response.content)
+    print(f"Downloaded {filename}")
+
+urls = [
+    "https://example.com/file1.txt",
+    "https://example.com/file2.txt",
+    "https://example.com/file3.txt"
+]
+
+threads = []
+start_time = time.time()
+
+for url in urls:
+    thread = threading.Thread(target=download_file, args=(url,))
+    threads.append(thread)
+    thread.start()
+
+for thread in threads:
+    thread.join()
+
+end_time = time.time()
+print(f"All downloads completed in {end_time - start_time:.2f} seconds")
+```
+
+**Notes:**
+- The `threading` module is used to create and manage threads.
+- Each download is run in a separate thread, allowing for concurrent execution.
+- The `join()` method is used to wait for all threads to complete before ending the program.
+
+## Day 21: Decorators with Arguments
+**Question:** Create a decorator that can be used to retry a function a specified number of times if it raises an exception.
+
+**Description:** This exercise builds on the concept of decorators, introducing decorators that can accept arguments.
+
+**Solution:**
+```python
+import time
+from functools import wraps
+
+def retry(max_attempts, delay=1):
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            attempts = 0
+            while attempts < max_attempts:
+                try:
+                    return func(*args, **kwargs)
+                except Exception as e:
+                    attempts += 1
+                    print(f"Attempt {attempts} failed: {str(e)}")
+                    if attempts == max_attempts:
+                        raise
+                    time.sleep(delay)
+        return wrapper
+    return decorator
+
+@retry(max_attempts=3, delay=2)
+def unreliable_function():
+    import random
+    if random.random() < 0.7:
+        raise Exception("Random error occurred")
+    return "Success!"
+
+print(unreliable_function())
+```
+
+**Notes:**
+- This decorator uses nested functions to handle arguments.
+- `@wraps(func)` is used to preserve the metadata of the original function.
+- The decorator will retry the function up to `max_attempts` times, with a delay between attempts.
+
+## Day 22: Asynchronous Programming with asyncio
+**Question:** Write an asynchronous program that fetches data from multiple URLs concurrently.
+
+**Description:** This exercise introduces asynchronous programming using Python's `asyncio` library, which allows for efficient I/O-bound operations.
+
+**Solution:**
+```python
+import asyncio
+import aiohttp
+import time
+
+async def fetch_url(session, url):
+    async with session.get(url) as response:
+        return await response.text()
+
+async def main():
+    urls = [
+        "https://api.github.com",
+        "https://api.github.com/events",
+        "https://api.github.com/repos/python/cpython"
+    ]
+    
+    async with aiohttp.ClientSession() as session:
+        tasks = [fetch_url(session, url) for url in urls]
+        responses = await asyncio.gather(*tasks)
+        
+    for url, response in zip(urls, responses):
+        print(f"URL: {url}, Length: {len(response)} characters")
+
+start_time = time.time()
+asyncio.run(main())
+end_time = time.time()
+print(f"Total time: {end_time - start_time:.2f} seconds")
+```
+
+**Notes:**
+- `asyncio` is Python's library for writing concurrent code using the async/await syntax.
+- `aiohttp` is an asynchronous HTTP client library.
+- `asyncio.gather()` is used to run multiple coroutines concurrently.
+
+## Day 23: Working with Databases (SQLite)
+**Question:** Create a program that interacts with an SQLite database to store and retrieve information about books.
+
+**Description:** This exercise introduces working with databases in Python, focusing on SQLite, which is included in the Python standard library.
+
+**Solution:**
+```python
+import sqlite3
+
+def create_table():
+    conn = sqlite3.connect('books.db')
+    cursor = conn.cursor()
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS books
+    (id INTEGER PRIMARY KEY,
+     title TEXT NOT NULL,
+     author TEXT NOT NULL,
+     year INTEGER)
+    ''')
+    conn.commit()
+    conn.close()
+
+def add_book(title, author, year):
+    conn = sqlite3.connect('books.db')
+    cursor = conn.cursor()
+    cursor.execute('INSERT INTO books (title, author, year) VALUES (?, ?, ?)',
+                   (title, author, year))
+    conn.commit()
+    conn.close()
+
+def get_all_books():
+    conn = sqlite3.connect('books.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM books')
+    books = cursor.fetchall()
+    conn.close()
+    return books
+
+# Usage
+create_table()
+add_book("To Kill a Mockingbird", "Harper Lee", 1960)
+add_book("1984", "George Orwell", 1949)
+
+books = get_all_books()
+for book in books:
+    print(f"ID: {book[0]}, Title: {book[1]}, Author: {book[2]}, Year: {book[3]}")
+```
+
+**Notes:**
+- SQLite is a lightweight, serverless database engine included in Python.
+- `sqlite3.connect()` creates a connection to the database file.
+- SQL queries are executed using the `cursor.execute()` method.
+- Always remember to commit changes and close the connection after operations.
+
+## Day 24: Web Scraping with BeautifulSoup
+**Question:** Write a program that scrapes a website for specific information (e.g., headlines from a news site).
+
+**Description:** This exercise introduces web scraping using the BeautifulSoup library, which is useful for extracting data from HTML and XML files.
+
+**Solution:**
+```python
+import requests
+from bs4 import BeautifulSoup
+
+def scrape_headlines(url):
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, 'html.parser')
+    headlines = soup.find_all('h2', class_='headline')
+    return [headline.text.strip() for headline in headlines]
+
+# Example usage (Note: URL and class names are hypothetical)
+url = "https://example-news-site.com"
+headlines = scrape_headlines(url)
+
+for i, headline in enumerate(headlines, 1):
+    print(f"{i}. {headline}")
+```
+
+**Notes:**
+- The `requests` library is used to fetch the web page content.
+- BeautifulSoup is used to parse the HTML and extract specific elements.
+- Web scraping should be done responsibly and in accordance with the website's robots.txt file and terms of service.
+
+## Day 25: Working with APIs
+**Question:** Create a program that interacts with a public API to fetch and display data (e.g., weather information for a given city).
+
+**Description:** This exercise introduces working with APIs, which are crucial for integrating external services and data into your applications.
+
+**Solution:**
+```python
+import requests
+
+def get_weather(city, api_key):
+    base_url = "http://api.openweathermap.org/data/2.5/weather"
+    params = {
+        "q": city,
+        "appid": api_key,
+        "units": "metric"
+    }
+    response = requests.get(base_url, params=params)
+    data = response.json()
+    
+    if response.status_code == 200:
+        return {
+            "temperature": data["main"]["temp"],
+            "description": data["weather"][0]["description"],
+            "humidity": data["main"]["humidity"]
+        }
+    else:
+        return None
+
+# Usage (you need to sign up for a free API key at OpenWeatherMap)
+api_key = "YOUR_API_KEY_HERE"
+city = "London"
+
+weather = get_weather(city, api_key)
+if weather:
+    print(f"Weather in {city}:")
+    print(f"Temperature: {weather['temperature']}°C")
+    print(f"Description: {weather['description']}")
+    print(f"Humidity: {weather['humidity']}%")
+else:
+    print("Failed to fetch weather data")
+```
+
+**Notes:**
+- Many APIs require authentication, usually in the form of an API key.
+- The `requests` library is commonly used for making HTTP requests to APIs.
+- API responses are often in JSON format, which can be easily parsed in Python.
+
+## Day 26: Data Analysis with Pandas
+**Question:** Analyze a CSV file containing sales data using Pandas. Calculate total sales, average sale price, and create a bar chart of sales by product category.
+
+**Description:** This exercise introduces Pandas, a powerful library for data manipulation and analysis in Python.
+
+**Solution:**
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Assume we have a CSV file named 'sales_data.csv'
+df = pd.read_csv('sales_data.csv')
+
+# Calculate total sales
+total_sales = df['sale_amount'].sum()
+
+# Calculate average sale price
+average_price = df['sale_amount'].mean()
+
+# Group sales by product category
+sales_by_category = df.groupby('product_category')['sale_amount'].sum()
+
+# Create a bar chart
+plt.figure(figsize=(10, 6))
+sales_by_category.plot(kind='bar')
+plt.title('Sales by Product Category')
+plt.xlabel('Product Category')
+plt.ylabel('Total Sales')
+plt.xticks(rotation=45)
+plt.tight_layout()
+
+# Display results
+print(f"Total Sales: ${total_sales:.2f}")
+print(f"Average Sale Price: ${average_price:.2f}")
+plt.show()
+```
+
+**Notes:**
+- Pandas provides powerful data structures like DataFrame for handling structured data.
+- The `groupby()` function is useful for aggregating data based on categories.
+- Matplotlib is often used in conjunction with Pandas for data visualization.
+
+## Day 27: Creating a Simple GUI with Tkinter
+**Question:** Create a simple GUI application that converts temperatures between Celsius and Fahrenheit.
+
+**Description:** This exercise introduces GUI programming in Python using Tkinter, which is included in the Python standard library.
+
+**Solution:**
+```python
+import tkinter as tk
+from tkinter import ttk
+
+def convert():
+    try:
+        celsius = float(celsius_entry.get())
+        fahrenheit = (celsius * 9/5) + 32
+        result_label.config(text=f"{celsius}°C is {fahrenheit:.2f}°F")
+    except ValueError:
+        result_label.config(text="Please enter a valid number")
+
+# Create the main window
+root = tk.Tk()
+root.title("Temperature Converter")
+root.geometry("300x150")
+
+# Create and place widgets
+celsius_label = ttk.Label(root, text="Celsius:")
+celsius_label.grid(row=0, column=0, padx=10, pady=10)
+
+celsius_entry = ttk.Entry(root)
+celsius_entry.grid(row=0, column=1, padx=10, pady=10)
+
+convert_button = ttk.Button(root, text="Convert", command=convert)
+convert_button.grid(row=1, column=0, columnspan=2, pady=10)
+
+result_label = ttk.Label(root, text="")
+result_label.grid(row=2, column=0, columnspan=2, pady=10)
+
+# Start the GUI event loop
+root.mainloop()
+```
+
+**Notes:**
+- Tkinter is a standard GUI library for Python.
+- The `grid()` geometry manager is used to organize widgets in a table-like structure.
+- The `command` parameter in buttons is used to specify the function to call when the button is clicked.
+
+## Day 28: Unit Testing
+**Question:** Write unit tests for a function that calculates the factorial of a number.
+
+**Description:** This exercise introduces unit testing in Python using the built-in `unittest` module, which is essential for ensuring the correctness of your code.
+
+**Solution:**
+```python
+import unittest
+
+def factorial(n):
+    if n < 0:
+        raise ValueError("Factorial is not defined for negative numbers")
+    if n == 0 or n == 1:
+        return 1
+    return n * factorial(n - 1)
+
+class TestFactorial(unittest.TestCase):
+    def test_factorial_of_zero(self):
+        self.assertEqual(factorial(0), 1)
+
+    def test_factorial_of_one(self):
+        self.assertEqual(factorial(1), 1)
+
+    def test_factorial_of_positive_number(self):
+        self.assertEqual(factorial(5), 120)
+
+    def test_factorial_of_negative_number(self):
+        with self.assertRaises(ValueError):
+            factorial(-1)
+
+if __name__ == '__main__':
+    unittest.main()
+```
+
+**Notes:**
+- The `unittest` module provides a rich set of tools for constructing and running tests.
+- Test methods should start with `test_` to be recognized by the test runner.
+- `assertEqual()` checks if two values are equal.
+- `assertRaises()` checks if a specific exception is raised.
+
+## Day 29: Working with JSON Data
+**Question:** Create a program that reads a JSON file containing a list of books, allows the user to add new books, and saves the updated list back to the JSON file.
+
+**Description:** This exercise introduces working with JSON data in Python, which is a common format for storing and exchanging data.
+
+**Solution:**
+```python
+import json
+
+def load_books():
+    try:
+        with open('books.json', 'r') as file:
+            return json.load(file)
+    except FileNotFoundError:
+        return []
+
+def save_books(books):
+    with open('books.json', 'w') as file:
+        json.dump(books, file, indent=2)
+
+def add_book(books):
+    title = input("Enter book title: ")
+    author = input("Enter author name: ")
+    year = input("Enter publication year: ")
+    books.append({"title": title, "author": author, "year": year})
+
+def display_books(books):
+    for book in books:
+        print(f"{book['title']} by {book['author']} ({book['year']})")
+
+def main():
+    books = load_books()
+    while True:
+        print("\n1. Display books")
+        print("2. Add a book")
+        print("3. Save and exit")
+        choice = input("Enter your choice (1-3): ")
+
+        if choice == '1':
+            display_books(books)
+        elif choice == '2':
+            add_book(books)
+        elif choice == '3':
+            save_books(books)
+            print("Books saved. Exiting...")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == '__main__':
+    main()
+```
+
+**Notes:**
+- The `json` module in Python provides methods to encode (`dump`) and decode (`load`) JSON data.
+- JSON is a lightweight data interchange format that is easy for humans to read and write.
+- Error handling (e.g., `FileNotFoundError`) is important when working with files.
+
+## Day 30: Building a Simple Web Application with Flask
+**Question:** Create a simple web application that allows users to add and view items in a to-do list.
+
+**Description:** This final exercise introduces web development in Python using the Flask framework, demonstrating how to create a basic web application with routing and templates.
+
+**Solution:**
+```python
+from flask import Flask, render_template, request, redirect, url_for
+
+app = Flask(__name__)
+
+todos = []
+
+@app.route('/')
+def index():
+    return render_template('index.html', todos=todos)
+
+@app.route('/add', methods=['POST'])
+def add():
+    todo = request.form['todo']
+    todos.append(todo)
+    return redirect(url_for('index'))
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+Create a templates folder and add an `index.html` file:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <form action="{{ url_for('add') }}" method="post">
+        <input type="text" name="todo" required>
+        <button type="submit">Add Todo</button>
+    </form>
+    <ul>
+        {% for todo in todos %}
+            <li>{{ todo }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+```
+
+**Notes:**
+- Flask is a lightweight web framework for Python.
+- The `@app.route()` decorator is used to bind functions to URL patterns.
+- Templates (like `index.html`) allow you to generate dynamic HTML pages.
+- This simple app doesn't persist data; in a real application, you'd typically use a database.
+
+Congratulations on completing the 30-day Python coding challenge! You've covered a wide range of topics from basic syntax to advanced concepts like web development and data analysis. Keep practicing and building projects to further improve your Python skills!
