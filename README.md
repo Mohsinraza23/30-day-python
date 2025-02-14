@@ -168,11 +168,13 @@ Stay consistent and keep learning! Happy coding! 🚀🐍
 If you find any issues or have improvements, feel free to fork and contribute!
 
 
-# Arithmetic Operators in Python
+# Arithmetic and Relational Operators in Python
 
-Python provides several arithmetic operators for mathematical computations. Below is a detailed explanation of each operator with examples.
+Python provides several arithmetic and relational operators for mathematical and logical computations. Below is a detailed explanation of each operator with examples.
 
-## 1. Addition (`+`)
+## Arithmetic Operators
+
+### 1. Addition (`+`)
 Adds two numbers.
 
 ```python
@@ -183,7 +185,7 @@ result = a + b  # 15
 print(result)
 ```
 
-## 2. Subtraction (`-`)
+### 2. Subtraction (`-`)
 Subtracts the second number from the first.
 
 ```python
@@ -192,7 +194,7 @@ result = a - b  # 5
 print(result)
 ```
 
-## 3. Multiplication (`*`)
+### 3. Multiplication (`*`)
 Multiplies two numbers.
 
 ```python
@@ -201,7 +203,7 @@ result = a * b  # 50
 print(result)
 ```
 
-## 4. Division (`/`)
+### 4. Division (`/`)
 Divides the first number by the second (returns a float).
 
 ```python
@@ -210,7 +212,7 @@ result = a / b  # 2.0
 print(result)
 ```
 
-## 5. Floor Division (`//`)
+### 5. Floor Division (`//`)
 Divides and rounds down to the nearest integer.
 
 ```python
@@ -219,7 +221,7 @@ result = a // b  # 2
 print(result)
 ```
 
-## 6. Modulus (`%`)
+### 6. Modulus (`%`)
 Returns the remainder of the division.
 
 ```python
@@ -228,7 +230,7 @@ result = a % b  # 0
 print(result)
 ```
 
-## 7. Exponentiation (`**`)
+### 7. Exponentiation (`**`)
 Raises the first number to the power of the second.
 
 ```python
@@ -237,15 +239,61 @@ result = a ** b  # 10^5 = 100000
 print(result)
 ```
 
+## Relational Operators
+Relational operators compare values and return a Boolean result (True or False).
+
+### 1. Equal to (`==`)
+Checks if two values are equal.
+
+```python
+# Equal to Example
+print(a == b)  # False
+```
+
+### 2. Not Equal to (`!=`)
+Checks if two values are not equal.
+
+```python
+# Not Equal to Example
+print(a != b)  # True
+```
+
+### 3. Greater than (`>`)
+Checks if the left operand is greater than the right.
+
+```python
+# Greater than Example
+print(a > b)  # True
+```
+
+### 4. Less than (`<`)
+Checks if the left operand is less than the right.
+
+```python
+# Less than Example
+print(a < b)  # False
+```
+
+### 5. Greater than or equal to (`>=`)
+Checks if the left operand is greater than or equal to the right.
+
+```python
+# Greater than or equal to Example
+print(a >= b)  # True
+```
+
+### 6. Less than or equal to (`<=`)
+Checks if the left operand is less than or equal to the right.
+
+```python
+# Less than or equal to Example
+print(a <= b)  # False
+```
+
 ### 📌 Notes:
-- The `/` operator returns a float, even if the division is exact.
-- The `//` operator performs integer (floor) division.
-- The `%` operator helps in finding remainders, useful in loops and conditions.
-- The `**` operator is used for power calculations.
+- Relational operators return `True` or `False` based on the condition.
+- They are commonly used in decision-making statements like `if` conditions.
+- They help in sorting and filtering data.
 
 Happy Coding! 🚀
-
-
-
-📧 Contact: [mohsinraza332@gmail.com](mailto:mohsinraza332@gmail.com)
 
