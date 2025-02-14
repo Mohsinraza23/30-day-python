@@ -297,3 +297,177 @@ print(a <= b)  # False
 
 Happy Coding! 🚀
 
+
+
+
+# Python Logical Operators & Type Conversion
+
+This repository demonstrates the use of logical operators and type conversion in Python. Both topics are essential for writing clear and effective code.
+
+## Logical Operators
+
+Logical operators in Python are used to perform operations on Boolean values (`True` or `False`). There are three main logical operators:
+
+### 1️⃣ `and` (Logical AND)
+**Description:** Returns `True` only if both conditions are `True`. If either or both conditions are `False`, it returns `False`.
+
+#### Syntax:
+```python
+a and b
+```
+#### Example:
+```python
+x = True
+y = False
+print(x and y)  # Output: False
+
+print(5 > 3 and 10 > 2)  # Output: True
+print(5 > 3 and 10 < 2)  # Output: False
+```
+
+### 2️⃣ `or` (Logical OR)
+**Description:** Returns `True` if at least one condition is `True`. Returns `False` only if both conditions are `False`.
+
+#### Syntax:
+```python
+a or b
+```
+#### Example:
+```python
+x = True
+y = False
+print(x or y)  # Output: True
+
+print(5 > 3 or 10 < 2)  # Output: True
+print(5 < 3 or 10 < 2)  # Output: False
+```
+
+### 3️⃣ `not` (Logical NOT)
+**Description:** Reverses the Boolean value. If the condition is `True`, it returns `False`, and vice versa.
+
+#### Syntax:
+```python
+not a
+```
+#### Example:
+```python
+x = True
+print(not x)  # Output: False
+
+print(not (5 > 3))  # Output: False
+print(not (5 < 3))  # Output: True
+```
+
+### Example Using All Logical Operators
+```python
+a = 10
+b = 5
+
+print("a > 5 and b < 10:", (a > 5) and (b < 10))   # True (Both conditions are True)
+print("a < 5 or b == 5:", (a < 5) or (b == 5))       # True (One condition is True)
+print("not (a == 10):", not (a == 10))               # False (Reverses True to False)
+```
+
+### Truth Table for Logical Operators
+| A (Condition 1) | B (Condition 2) | A and B | A or B | not A |
+|-----------------|-----------------|---------|--------|-------|
+| True           | True           | True    | True   | False |
+| True           | False          | False   | True   | False |
+| False          | True           | False   | True   | True  |
+| False          | False          | False   | False  | True  |
+
+## Use Cases
+
+### Conditional Statements
+Use logical operators in `if-else` conditions.
+```python
+age = 20
+if age > 18 and age < 30:
+    print("Eligible for the program.")  # Output: Eligible for the program.
+```
+
+### Checking Multiple Conditions
+```python
+username = "admin"
+password = "1234"
+
+if username == "admin" and password == "1234":
+    print("Access Granted!")  # Output: Access Granted!
+else:
+    print("Access Denied!")
+```
+
+### Boolean Toggling
+```python
+is_logged_in = False
+is_logged_in = not is_logged_in  # Now becomes True
+print(is_logged_in)  # Output: True
+```
+
+---
+
+## Type Conversion in Python
+
+Type conversion refers to converting a variable from one data type to another. Python provides several built-in functions for this purpose.
+
+### Common Type Conversion Functions
+
+#### `int()`: Converts a value to an integer.
+```python
+num_str = "100"
+num_int = int(num_str)  # 100 as an integer
+print(num_int, type(num_int))
+```
+
+#### `float()`: Converts a value to a floating-point number.
+```python
+num_str = "3.14"
+num_float = float(num_str)  # 3.14 as a float
+print(num_float, type(num_float))
+```
+
+#### `str()`: Converts a value to a string.
+```python
+num = 100
+num_str = str(num)  # "100" as a string
+print(num_str, type(num_str))
+```
+
+#### `list()`: Converts an iterable (like a tuple) into a list.
+```python
+tup = (1, 2, 3)
+lst = list(tup)  # [1, 2, 3] as a list
+print(lst, type(lst))
+```
+
+#### `tuple()`: Converts an iterable (like a list) into a tuple.
+```python
+lst = [1, 2, 3]
+tup = tuple(lst)  # (1, 2, 3) as a tuple
+print(tup, type(tup))
+```
+
+### Example: Combining Type Conversion with Logical Operations
+```python
+# Convert string to int and use in a logical condition
+num_str = "20"
+num = int(num_str)  # Convert string to int
+
+if num > 10 and num < 30:
+    print("The number is between 10 and 30.")  # Output: The number is between 10 and 30.
+else:
+    print("The number is out of range.")
+
+# Converting a float to int for further calculation
+pi = 3.14159
+pi_int = int(pi)  # Converts to 3 (truncates the decimal)
+print("Integer value of pi:", pi_int)
+```
+
+## Conclusion
+
+- **Logical Operators:** `and`, `or`, and `not` are essential for making decisions in your Python code.
+- **Type Conversion:** Functions like `int()`, `float()`, `str()`, `list()`, and `tuple()` enable you to convert data types, making it easier to manipulate and compare data.
+
+🚀 **Happy Coding!**
+
