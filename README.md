@@ -167,5 +167,85 @@ Stay consistent and keep learning! Happy coding! 🚀🐍
 ## 🤝 Contribute
 If you find any issues or have improvements, feel free to fork and contribute!
 
+
+# Arithmetic Operators in Python
+
+Python provides several arithmetic operators for mathematical computations. Below is a detailed explanation of each operator with examples.
+
+## 1. Addition (`+`)
+Adds two numbers.
+
+```python
+# Addition Example
+a = 10
+b = 5
+result = a + b  # 15
+print(result)
+```
+
+## 2. Subtraction (`-`)
+Subtracts the second number from the first.
+
+```python
+# Subtraction Example
+result = a - b  # 5
+print(result)
+```
+
+## 3. Multiplication (`*`)
+Multiplies two numbers.
+
+```python
+# Multiplication Example
+result = a * b  # 50
+print(result)
+```
+
+## 4. Division (`/`)
+Divides the first number by the second (returns a float).
+
+```python
+# Division Example
+result = a / b  # 2.0
+print(result)
+```
+
+## 5. Floor Division (`//`)
+Divides and rounds down to the nearest integer.
+
+```python
+# Floor Division Example
+result = a // b  # 2
+print(result)
+```
+
+## 6. Modulus (`%`)
+Returns the remainder of the division.
+
+```python
+# Modulus Example
+result = a % b  # 0
+print(result)
+```
+
+## 7. Exponentiation (`**`)
+Raises the first number to the power of the second.
+
+```python
+# Exponentiation Example
+result = a ** b  # 10^5 = 100000
+print(result)
+```
+
+### 📌 Notes:
+- The `/` operator returns a float, even if the division is exact.
+- The `//` operator performs integer (floor) division.
+- The `%` operator helps in finding remainders, useful in loops and conditions.
+- The `**` operator is used for power calculations.
+
+Happy Coding! 🚀
+
+
+
 📧 Contact: [mohsinraza332@gmail.com](mailto:mohsinraza332@gmail.com)
 
