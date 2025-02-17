@@ -1,0 +1,82 @@
+# Strings and Conditional Statements
+
+## String Concatenation
+```python
+"hello" + "world"  # Results in "helloworld"
+```
+
+## String Length
+```python
+len(str)  # Returns the length of the string
+```
+
+## Indexing
+```python
+str = "Code_with_Mohsin"
+print(str[0])  # 'C'
+print(str[1])  # 'o'
+```
+
+## Slicing
+```python
+str = "CodeWithMohsin"
+print(str[1:4])   # 'ode'
+print(str[:4])    # Same as str[0:4]
+print(str[1:])    # Same as str[1:len(str)]
+```
+
+## Negative Indexing
+```python
+str = "Apple"
+print(str[-3:-1])  # 'pl'
+```
+
+## String Functions
+```python
+str = "I am a coder."
+print(str.endswith("er."))  # True if string ends with given substring
+print(str.count("am"))  # Counts occurrences of substring
+print(str.capitalize())  # Capitalizes first character
+print(str.find("coder"))  # Returns first index of first occurrence
+print(str.replace("coder", "developer"))  # Replaces all occurrences
+```
+
+## Practice Questions
+1. Write a program to input user's first name & print its length.
+2. Write a program to find the occurrence of `$` in a string.
+
+---
+
+## Conditional Statements
+### Syntax
+```python
+if condition:
+    # Statement 1
+elif condition:
+    # Statement 2
+else:
+    # Statement N
+```
+
+### Grading System Example
+```python
+marks = int(input("Enter marks: "))
+if marks >= 90:
+    grade = "A"
+elif marks >= 80:
+    grade = "B"
+elif marks >= 70:
+    grade = "C"
+else:
+    grade = "D"
+print("Grade:", grade)
+```
+
+## Practice Questions
+1. Write a program to check if a number is odd or even.
+2. Write a program to find the greatest of three numbers.
+3. Write a program to check if a number is a multiple of 7.
+
+---
+
+**Happy Coding! 🚀**
